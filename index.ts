@@ -103,7 +103,7 @@ interface ICategory{
    title: string
 }
 
-interface IPost{
+interface IPost<T>{
    id: number,
    title: string,
    description: string,
@@ -115,4 +115,32 @@ interface IPostBetter<T>{
    title: string,
    description: string,
    extra: T[]
+}
+
+let post: IPostBetter<String> = {
+   id:123,
+   description: "desc",
+   title: "title",
+   extra: ["wow", "use"]
+}
+
+interface IPostEvenBetter<T extends object>{
+   id: number,
+   title: string,
+   description: string,
+   extra: T[]
+}
+
+let postEvenBetter: IPostEvenBetter<ICategory> = {
+   id:123,
+   description: "desc",
+   title: "title",
+   extra: [{id:12, title:"wow"}]
+}
+
+let postEvenBetter2: IPostEvenBetter<IAuthor> = {
+   id:123,
+   description: "desc",
+   title: "title",
+   extra: [{id:12, name:"abdi"}]
 }
