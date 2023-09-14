@@ -1,1 +1,1 @@
-### this is typescript basics
+### this is typescript basics tutorial
